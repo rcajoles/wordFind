@@ -14,5 +14,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
+    return view('pages.welcome');
+})->name('welcome');
+
+
+Route::resource('previous-search', 'PreviousSearchController')->only([
+    'index', 'store', 'show'
+]);
